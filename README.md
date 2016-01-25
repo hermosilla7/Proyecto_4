@@ -1,11 +1,13 @@
-?#PROYECTO 3: 
-Proyecto de Mateo Hermosilla
+##PROYECTO 4: 
+Proyecto de Mateo Hermosilla y Jose Luis Maseda
 
 ##Reservas:
-"Com a soluci� de les limitacions del projecte anterior s'han d'afegir les opcions que permeten reservar un recurs en un dia i una hora per a una franja horaria (hores senceres). L'aplicaci� haur� de permetre diversos tipus d'usuari (usuari i administrador), aix� com tota la gesti� dels usuaris nom�s un usuari administrador podr� fer (Alta/Baixa/Canvi usuaris).
-EXTRA:
-- Part administraci� (nom�s ho podr� fer un usuari administrador):
-  - Alta/Baixa/Canvi recursos.
-  - Alta/Baixa/Canvi reserves."								
 
-Resoluci�n adaptada a 1600 x 900
+"Creació de la web app MyContacts. Una aplicació que, un cop logat, et permeti guardar tota la informació dels teus contactes (nom, cognoms, correu electrònic, adreça, telèfons... i fins a dues ubicacions: casa i feina/escola/altres). En el procés d'alta d'un contacte, s'ha de poder triar al mapa de Google Maps una ubicació, o bé mitjançant la introducció de les dades pròpies de geoposicionament (latitud i longitud).
+L'aplicació ha de permetre l'alta en el sistema, la modificació del perfil i l'eliminació, així com l'alta, baixa i modificació de contactes.
+
+EXTRES:
+- Possibilitats de visualització de tots els contactes (o tots aquells que es desitgi) alhora en un sol mapa, indicant qui és cadascún.
+- Capturar la ubicació actual de l'usuari i mostrar la ruta fins al contacte mostrat."								
+
+Resolución adaptada a 1600 x 900
