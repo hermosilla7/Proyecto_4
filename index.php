@@ -13,6 +13,8 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Página de login</title>
+		<link rel="stylesheet" type="text/css" href="js/estilo.css"/>
+		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	</head>
 	<body>
 		<?php
@@ -21,11 +23,22 @@
 				echo "<br/><br/>";
 			}
 		?>		
-		<form name="f1" action="login.proc.php" method="get">
-			Mail: <input type="text" name="mail" size="25" maxlength="50"><br/>
-			Password: <input type="password" name="pass" size="25" maxlength="25"><br/>
-			<input type="submit" name="acce" value="Acceder">
-			<a href='usuarios_insert.php'>Dar de alta</a>
-		</form>
+		<div class="login-form">
+			<h1>My Contacts</h1>
+     		<div class="form-group ">
+				<form name="f1" action="login.proc.php" method="get">
+					<input type="text" name="mail" class="form-control" placeholder="Correo"maxlength="50">
+			</div>
+				    <div class="form-group">
+				       <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+				       <i class="fa fa-lock"></i>
+				    </div>
+					<span class="alert">Invalid Credentials</span>
+    				<button type="button" class="log-btn" name="acce">Entrar</button>
+     				<button type="button" class="sign-btn" onclick="window.location.href='usuarios_insert.php'">Registrarme</button>  
+   			
+				</form>
+			</div>
+		</div>
 	</body>
 </html>
