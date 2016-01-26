@@ -19,9 +19,9 @@
 		$datos_usuario=mysqli_fetch_array($resultado);
 		
 		//creamos la variable de sesión mail
-		$_SESSION['id']=$_REQUEST['usu_id'];
+		$_SESSION['id']=$datos_usuario['id'];
 		$_SESSION['mail']=$_REQUEST['mail'];
-		$_SESSION['nombre']=$datos_usuario['usu_nombre'];
+		$_SESSION['nombre']=$datos_usuario['nombre'];
 		$_SESSION['nivel']=$datos_usuario['usu_nivel'];
 
 		//redirigimos a la página principal
