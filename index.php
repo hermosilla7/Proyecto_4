@@ -13,7 +13,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Página de login</title>
-		<link rel="stylesheet" type="text/css" href="js/estilo.css"/>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	</head>
 	<body>
