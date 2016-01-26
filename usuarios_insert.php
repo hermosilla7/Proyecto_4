@@ -64,7 +64,7 @@ function validar(){
 						<input type="file" name="foto" id="foto" class="form-control"></br>
 					</div>
 					<button type="submit" class="log-btn" name="acce">Registrar</button>
-					<button type="button" class="sign-btn" onClick="">Volver</button>
+					<button type="button" class="sign-btn" onClick="window.location.href='index.php'">Volver</button>
 				</form
 			</div>
 		</div>
