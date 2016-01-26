@@ -27,7 +27,7 @@
 			$message = 'Usuario dado de alta';
 			echo "<SCRIPT type='text/javascript'> //not showing me this
 		        alert('$message');
-		        window.location.replace(\"http://localhost/Proyecto_4/index.php\");
+		        window.location.replace(\"index.php\");
 		    </SCRIPT>";
 		?>
 	</body>
