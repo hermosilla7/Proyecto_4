@@ -34,7 +34,7 @@
 				       <i class="fa fa-lock"></i>
 				    </div>
 					<span class="alert">Invalid Credentials</span>
-    				<button type="button" class="log-btn" name="acce">Entrar</button>
+    				<button type="submit" class="log-btn" name="acce">Entrar</button>
      				<button type="button" class="sign-btn" onclick="window.location.href='usuarios_insert.php'">Registrarme</button>  
    			
 				</form>

@@ -33,7 +33,7 @@
 					<div class="form-group">
 						<input type="file" name="foto" id="foto" class="form-control"></br>
 					</div>
-					<button type="button" class="sign-btn" name="acce">Registrar</button>
+					<button type="submit" class="sign-btn" name="acce">Registrar</button>
 				</form
 			</div>
 		</div>

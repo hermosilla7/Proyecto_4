@@ -1,5 +1,5 @@
 <?php
-	include_once 'conexion.php';
+	include_once 'conexion.proc.php';
 ?>
 <html>
 	<head>
@@ -24,7 +24,11 @@
 			//lanzamos la sentencia sql
 			mysqli_query($con, $sql);
 
-			header("location: index.php")
+			$message = 'Usuario dado de alta';
+			echo "<SCRIPT type='text/javascript'> //not showing me this
+		        alert('$message');
+		        window.location.replace(\"http://localhost/Proyecto_4/index.php\");
+		    </SCRIPT>";
 		?>
 	</body>
 </html>
