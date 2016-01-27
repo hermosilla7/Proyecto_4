@@ -57,11 +57,13 @@
 				echo ", ";
 				echo utf8_encode($contacto['ubicacion_prim_lon']);
 				echo "<br/>";
-				echo "<b>Ubicación secundaria:</b> ";
-				echo utf8_encode($contacto['ubicacion_sec_lat']);
-				echo ", ";
-				echo utf8_encode($contacto['ubicacion_sec_lon']);
-				echo "<br/>";
+
+				$nombre_contacto = utf8_encode($contacto['nombre']) . " " . utf8_encode($contacto['apellidos']);
+				$loc_lat = utf8_encode($contacto['ubicacion_prim_lat']);
+				$loc_lon = utf8_encode($contacto['ubicacion_prim_lon']);
+
+				// echo $loc_lat;
+				// echo $loc_lon;
 				
 
 				$fichero="img/$contacto[img]";
@@ -73,13 +75,71 @@
                 }
                 echo"</div>";
 
-                ?><a href="contactos_modificar.php?id=<?php echo $contacto['id'];?>">Editar contacto</a>
-                <a href="contactos_baja.proc.php?id=<?php echo $contacto['id'];?>">Eliminar contacto</a>
+                ?>
+                
 
-                <?php echo "<br><br/>";
-			}
-			
-		?>
+
+				<a href="contactos_modificar.php?id=<?php echo $contacto['id'];?>">Editar contacto</a>
+		                <a href="contactos_baja.proc.php?id=<?php echo $contacto['id'];?>">Eliminar contacto</a>
+		                <a href="">Crear Ruta</a>
+
+		                <?php echo "<br><br/>";
+					}
+					
+				?>
+
+		        <!-- CREAR MAPA CON MARCADORES DE LA BD -->
+                <?php echo utf8_encode($contacto['ubicacion_prim_lat']);
+				echo ", ";
+				echo utf8_encode($contacto['ubicacion_prim_lon']);?>
+				<!DOCTYPE html>
+				<html>
+				<head>
+				<script
+				src="http://maps.googleapis.com/maps/api/js">
+				</script>
+
+				<script>
+				var myCenter=new google.maps.LatLng(41.384724, 2.172798);
+				var lat_js = "<?php echo $loc_lat; ?>" ;
+				var lon_js = "<?php echo $loc_lon; ?>" ;
+				var nombre_js = "<?php echo $nombre_contacto; ?>" ;
+				// console.log(variablejs1);
+				// console.log(variablejs2);
+				function initialize()
+				{
+				var mapProp = {
+				  center:myCenter,
+				  zoom:5,
+				  mapTypeId:google.maps.MapTypeId.ROADMAP
+				  };
+
+				var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+				var marker=new google.maps.Marker({
+				  position:new google.maps.LatLng(lat_js , lon_js),
+				  });
+
+				marker.setMap(map);
+
+				var infowindow = new google.maps.InfoWindow({
+				  content:nombre_js
+				  });
+
+				infowindow.open(map,marker);
+				}
+
+				google.maps.event.addDomListener(window, 'load', initialize);
+				</script>
+				</head>
+
+				<body>
+				<div id="googleMap" style="width:500px;height:380px;"></div>
+				</body>
+				</html>
+				<!-- CREAR MAPA CON MARCADORES DE LA BD -->
+
+
 		<button type="button" onclick="window.location.href='contactos_insert.php'">Crear contacto</button> 
 		<br/><br/>
 		<a href="usuarios_modificar.php">Editar perfil</a>
