@@ -73,18 +73,17 @@
                 }
                 echo"</div>";
 
-				//enlace a la página que modifica el producto pasándole la id (clave primaria)
-					// if($prod['pro_actiu']==1){
-					// 	echo "<a href='modificar.php?id=$prod[pro_id]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
-					// }
-					
-				echo "<br/>";
+                ?><a href="contactos_modificar.php?id=<?php echo $contacto['id'];?>">Editar contacto</a>
+                <a href="contactos_baja.proc.php?id=<?php echo $contacto['id'];?>">Eliminar contacto</a>
+
+                <?php echo "<br><br/>";
 			}
 			
 		?>
 		<button type="button" onclick="window.location.href='contactos_insert.php'">Crear contacto</button> 
 		<br/><br/>
 		<a href="usuarios_modificar.php">Editar perfil</a>
+		<a href="usuarios_baja.proc.php?id=<?php echo $user_id;?>">Darse de baja</a>
 		<a href="index.php">Logout</a>
 	</body>
 </html>

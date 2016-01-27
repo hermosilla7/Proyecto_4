@@ -1,10 +1,9 @@
 <?php
-	include_once 'conexion.php';
-	include_once 'header_admin.php';
-	
+	session_start();
+	include_once 'conexion.proc.php';
 
-	$nomUsuari = $_SESSION['nom'];
-	$user_id = $_SESSION['id_user'];
+	$nomUsuari = $_SESSION['nombre'];
+	$user_id = $_SESSION['id'];
 
 	// imagen nueva
 	$foto_new=$_FILES["foto"]["name"];
@@ -17,17 +16,18 @@
 	// 
 
 	if ($foto_new != "") {
-		$sql = "UPDATE recurso SET nombre='$_REQUEST[nombre]', descr='$_REQUEST[descr]', img='$foto_new', categoria='$_REQUEST[categoria]' WHERE id_recurso='$_REQUEST[id_recurso_seleccionado]'";
+		$sql = "UPDATE usuario SET nombre='$_REQUEST[nombre]', pass=md5('$_REQUEST[pass]'), apellidos='$_REQUEST[apellidos]', correo='$_REQUEST[correo]', img='$foto_new' WHERE id = $user_id";
 	}
 	else{
-		$sql = "UPDATE recurso SET nombre='$_REQUEST[nombre]', descr='$_REQUEST[descr]', categoria='$_REQUEST[categoria]' WHERE id_recurso='$_REQUEST[id_recurso_seleccionado]'";
+		$sql = "UPDATE usuario SET nombre='$_REQUEST[nombre]', pass=md5('$_REQUEST[pass]'), apellidos='$_REQUEST[apellidos]', correo='$_REQUEST[correo]' WHERE id = $user_id";
+		
 	}
 	
-
+	echo $sql;
 	//lanzamos la sentencia sql
 	$datos = mysqli_query($con, $sql);
 
-	header("location: abc_recursos.php")
+	header("location: principal.php")
 
 ?>
 
