@@ -4,6 +4,9 @@
 	// include 'conexion.proc.php';
 	// $consulta_usuarios = "SELECT * FROM usuario";
 	// $result_usuarios = mysqli_query($con, $consulta_usuarios);
+
+
+	// AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,6 +15,16 @@
 		<title>Página de login</title>
 		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<script src="/js/mapa_insert.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw&callback=initMap"async defer></script>
+
+
+		<script type="text/javascript">
+
+		window.onload = function(){
+			initMap();
+		}
+		</script>
 	</head>
 	<body>
 		<div class="login-form">
@@ -53,6 +66,13 @@
 					<div class="form-group">
 						<input type="file" name="foto" id="foto" class="form-control"></br>
 					</div>
+
+
+					<div id="map" style="width=200px; height=200px;">
+						
+					</div>
+
+
 					<button type="submit" class="sign-btn" name="acce">Registrar</button>
 				</form
 			</div>
