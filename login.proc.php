@@ -23,6 +23,7 @@
 		$_SESSION['mail']=$_REQUEST['mail'];
 		$_SESSION['nombre']=$datos_usuario['nombre'];
 		$_SESSION['nivel']=$datos_usuario['usu_nivel'];
+		$_SESSION['img']=$datos_usuario['img'];
 
 		//redirigimos a la página principal
 		header("location: principal.php");

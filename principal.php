@@ -2,6 +2,7 @@
 //iniciamos sesión - SIEMPRE TIENE QUE ESTAR EN LA PRIMERA LÍNEA
 session_start();
 $user_id = $_SESSION['id'];
+$foto = $_SESSION['img'];
 include 'conexion.proc.php';
 $consulta_contactos = "SELECT * FROM contacto where id_usuario = $user_id";
 $result_contactos = mysqli_query($con, $consulta_contactos);
@@ -14,7 +15,7 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
     <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     <script>
             function confirmDel(usuario) {
-                var r = confirm("¿Quieres eliminar contacto?"+usuario);
+                var r = confirm("¿Quieres eliminar contacto?");
                 if (r == true) {
                     location.href = "contactos_baja.proc.php?id="+usuario;
                 } else {
@@ -46,8 +47,12 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 //include("conexion.proc.php");
 
 if (isset($_SESSION['mail'])) {
-    echo "Bienvenido: " . $_SESSION['nombre'];
-    ?><input type="image" src="img/add.png" onclick="window.location.href='contactos_insert.php'" style="float: right;"></br></br><?php
+    ?>
+    <div class="prin-img" style="margin-bottom: 15px;">
+        <input type="image" src="img/<?php echo $foto ?>"style="float: left; width: 68px; height: 68px;">
+        <input type="image" src="img/add.png" onclick="window.location.href='contactos_insert.php'" style="float: right;"></br></br>
+    </div>
+    <?php
     /*if($_SESSION['nivel']==1){
         echo "Eres administrador. A administrar!!";
     } elseif ($_SESSION['nivel']==2){
@@ -62,7 +67,7 @@ if (isset($_SESSION['mail'])) {
 }
 $contactosArray = [];
 while ($contacto = mysqli_fetch_array($result_contactos)) {
-    echo "<b>Nombre:</b> ";
+    echo "<b style='margin-top: 15px;'>Nombre:</b> ";
     echo utf8_encode($contacto['nombre']);
     echo "<br/>";
     echo "<b>Apellidos:</b> ";

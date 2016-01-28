@@ -18,6 +18,9 @@
 	</head>
 	<body>	
 		<div class="login-form">
+			<div class="prin-img" align="middle" style="margin-bottom: 10px;">
+			<input type="image" src="img/1.jpg" style="width: 82px; height: 82px;">
+		</div>
 			<h1>My Contacts</h1>
      		<div class="form-group ">
 				<form name="f1" action="login.proc.php" method="get">
