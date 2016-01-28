@@ -7,7 +7,6 @@
 	$contacto_id = $_REQUEST['id'];
 
 	$sql_update="delete from contacto where id = $contacto_id";
-
 		mysqli_query($con,$sql_update)
 		  or die("Problemas en el update".mysqli_error($con));
 

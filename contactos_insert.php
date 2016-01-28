@@ -15,20 +15,49 @@
 		<title>Página de login</title>
 		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-		<script src="/js/mapa_insert.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw&callback=initMap"async defer></script>
-
-
-		<script type="text/javascript">
-
-		window.onload = function(){
-			initMap();
-		}
-		</script>
 	</head>
 	<body>
-		<div class="login-form">
-			<h1>Registro</h1>
+		<div id="contactMap">
+		<script>
+		var map;
+		var markers = [];
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.384724, lng: 2.172798},
+          zoom: 8
+        });
+        google.maps.event.addListener(map, 'click', function (e) {
+            //alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+            document.getElementsByName('ubicacion_prim_lat')[0].value = e.latLng.lat();
+            document.getElementsByName('ubicacion_prim_lon')[0].value = e.latLng.lng();
+            var marker=new google.maps.Marker({
+			  	position:new google.maps.LatLng(e.latLng.lat(), e.latLng.lng()),
+			});
+			marker.setMap(map);
+			//markers.push(marker);
+			//alert(markers[0]);
+        });
+      	
+        
+      }
+      
+  //     function setMapOnAll(map) {
+		//   for (var i = 0; i < markers.length; i++) {
+		//     markers[i].setMap(map);
+		//   }
+		// }
+		// function delMarkers(){
+		// 	setMapOnAll(null);
+  // 			markers = [];
+		// }
+
+    </script>
+        <div id="map" style="width:800px;height:550px;"></div>
+	</div>
+		<div id="contactos">
+		<div class="contact-form">
+			<h1>Nuevo Contacto</h1>
      		<div class="form-group ">
 				<form action="contactos_insert.proc.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
@@ -51,16 +80,16 @@
 						<input type="text" name="telefono_sec" class="form-control" placeholder="Teléfono secundario"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="ubicacion_prim_lat" class="form-control_prim" placeholder="Latitud"><br>
+						<input type="text" name="ubicacion_prim_lat" class="form-control" placeholder="Latitud"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="ubicacion_prim_lon" class="form-control_prim" placeholder="Longitud"><br>
+						<input type="text" name="ubicacion_prim_lon" class="form-control" placeholder="Longitud"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="ubicacion_sec_lat" class="form-control_prim" placeholder="Latitud"><br>
+						<input type="text" name="ubicacion_sec_lat" class="form-control" placeholder="Latitud"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="ubicacion_sec_lon" class="form-control_prim" placeholder="Longitud"><br>
+						<input type="text" name="ubicacion_sec_lon" class="form-control" placeholder="Longitud"><br>
 					</div>
 
 					<div class="form-group">
@@ -68,14 +97,11 @@
 					</div>
 
 
-					<div id="map" style="width=200px; height=200px;">
-						
-					</div>
-
-
 					<button type="submit" class="sign-btn" name="acce">Registrar</button>
-				</form
+					<button type="button" class="log-btn" onClick="window.location.href='principal.php'">Volver</button>
+				</form>
 			</div>
 		</div>
+	</div>
 	</body>
 </html>

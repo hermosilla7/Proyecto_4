@@ -41,7 +41,7 @@ function validar(){
 </script>
 	</head>
 	<body>
-		<div class="login-form">
+		<div class="mod-form">
 			<h1>Registro</h1>
      		<div class="form-group ">
 				<form name="f1" action="usuarios_insert.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validar();">
@@ -63,7 +63,7 @@ function validar(){
 					<div class="form-group">
 						<input type="file" name="foto" id="foto" class="form-control"></br>
 					</div>
-					<button type="submit" class="log-btn" name="acce">Registrar</button>
+					<button type="submit" class="log-btn" onClick="validar()" name="acce">Registrar</button>
 					<button type="button" class="sign-btn" onClick="window.location.href='index.php'">Volver</button>
 				</form
 			</div>

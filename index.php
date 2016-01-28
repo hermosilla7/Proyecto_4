@@ -16,13 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	</head>
-	<body>
-		<?php
-			if(isset($error)){
-				echo "ERROR: " . $error;
-				echo "<br/><br/>";
-			}
-		?>		
+	<body>	
 		<div class="login-form">
 			<h1>My Contacts</h1>
      		<div class="form-group ">
@@ -40,5 +34,13 @@
 				</form>
 			</div>
 		</div>
+		<?php
+		echo "<div class='log-error'>";
+			if(isset($error)){
+				echo "ERROR: " . $error;
+				echo "<br/><br/>";
+			}
+		echo "</div>";
+		?>		
 	</body>
 </html>
