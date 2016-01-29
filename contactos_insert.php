@@ -13,6 +13,7 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Página de login</title>
+		<link rel="icon" type="image/png" href="img/portada.png" />
 		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw&callback=initMap"async defer></script>
@@ -61,7 +62,7 @@
      		<div class="form-group ">
 				<form action="contactos_insert.proc.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<input type="text" name="nombre" class="form-control" placeholder="Nombre"><br>
+						<input type="text" name="nombre" class="form-control" placeholder="Nombre" required><br>
 					</div>
 					<div class="form-group">
 						<input type="text" name="apellidos" class="form-control" placeholder="Apellidos"><br>
@@ -74,7 +75,7 @@
 						<input type="text" name="direccion" class="form-control" placeholder="Dirección"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="telefono_prim" class="form-control" placeholder="Teléfono"><br>
+						<input type="text" name="telefono_prim" class="form-control" placeholder="Teléfono" required><br>
 					</div>
 					<div class="form-group">
 						<input type="text" name="telefono_sec" class="form-control" placeholder="Teléfono secundario"><br>

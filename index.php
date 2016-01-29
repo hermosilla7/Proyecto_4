@@ -13,15 +13,15 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Página de login</title>
+		<link rel="icon" type="image/png" href="img/portada.png" />
 		<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
 		<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	</head>
 	<body>	
 		<div class="login-form">
 			<div class="prin-img" align="middle" style="margin-bottom: 10px;">
-			<input type="image" src="img/1.jpg" style="width: 82px; height: 82px;">
+			<input type="image" src="img/portada.png" style="width: 100px; height: 100px;">
 		</div>
-			<h1>My Contacts</h1>
      		<div class="form-group ">
 				<form name="f1" action="login.proc.php" method="get">
 					<input type="text" name="mail" class="form-control" placeholder="Correo"maxlength="50">

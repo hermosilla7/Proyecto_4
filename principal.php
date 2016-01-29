@@ -3,6 +3,7 @@
 session_start();
 $user_id = $_SESSION['id'];
 $foto = $_SESSION['img'];
+$nom_user=$_SESSION['nombre'];
 include 'conexion.proc.php';
 $consulta_contactos = "SELECT * FROM contacto where id_usuario = $user_id";
 $result_contactos = mysqli_query($con, $consulta_contactos);
@@ -12,6 +13,7 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 <html>
 <head>
     <title>Página principal</title>
+    <link rel="icon" type="image/png" href="img/portada.png" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     <script>
             function confirmDel(usuario) {
@@ -37,7 +39,10 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 </head>
 <body>
     <div id="contactos">
-
+<div class="prin-img" style="margin-bottom: 15px;">
+        <input type="image" src="img/<?php echo $foto ?>"style="float: left; width: 68px; height: 68px;">
+    </div>
+    <h3 style="position: absolute; padding-left: 70px"><?php echo "Bienvenido " .$nom_user?></h3>
 <input type="image" src="img/off.png" onclick="window.location.href='index.php'" style="float: right;">
 <input type="image" src="img/baja.png" onclick="confirmar()" style="float: right;">
 <input type="image" src="img/edit.png" onclick="window.location.href='usuarios_modificar.php'" style="float: right;"></br>
@@ -48,8 +53,9 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 
 if (isset($_SESSION['mail'])) {
     ?>
+    <h2>Contactos</h2>
     <div class="prin-img" style="margin-bottom: 15px;">
-        <input type="image" src="img/<?php echo $foto ?>"style="float: left; width: 68px; height: 68px;">
+        
         <input type="image" src="img/add.png" onclick="window.location.href='contactos_insert.php'" style="float: right;"></br></br>
     </div>
     <?php
