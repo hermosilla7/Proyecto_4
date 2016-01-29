@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	error_reporting(0);
 	include_once 'conexion.proc.php';
 
 	$nomUsuari = $_SESSION['nombre'];
@@ -22,8 +23,7 @@
 		$sql = "UPDATE usuario SET nombre='$_REQUEST[nombre]', pass=md5('$_REQUEST[pass]'), apellidos='$_REQUEST[apellidos]', correo='$_REQUEST[correo]' WHERE id = $user_id";
 		
 	}
-	
-	echo $sql;
+
 	//lanzamos la sentencia sql
 	$datos = mysqli_query($con, $sql);
 

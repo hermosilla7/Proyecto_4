@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	error_reporting(0);
 	include_once 'conexion.proc.php';	
 
 	$nomUsuari = $_SESSION['nombre'];

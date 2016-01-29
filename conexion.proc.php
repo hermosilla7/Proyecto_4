@@ -1,5 +1,5 @@
 <?php
-	//conectamos con la base de datos
+	error_reporting(0);
 	$con = mysqli_connect("localhost", "root", "", "mycontacts");
 
 	//si no se puede realizar la conexión, mostramos error

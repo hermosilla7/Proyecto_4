@@ -1,12 +1,6 @@
 <?php
-	//iniciamos sesión - SIEMPRE TIENE QUE ESTAR EN LA PRIMERA LÍNEA
+	error_reporting(0);
 	session_start();
-	// include 'conexion.proc.php';
-	// $consulta_usuarios = "SELECT * FROM usuario";
-	// $result_usuarios = mysqli_query($con, $consulta_usuarios);
-
-
-	// AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,30 +23,16 @@
           zoom: 8
         });
         google.maps.event.addListener(map, 'click', function (e) {
-            //alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
             document.getElementsByName('ubicacion_prim_lat')[0].value = e.latLng.lat();
             document.getElementsByName('ubicacion_prim_lon')[0].value = e.latLng.lng();
             var marker=new google.maps.Marker({
 			  	position:new google.maps.LatLng(e.latLng.lat(), e.latLng.lng()),
 			});
 			marker.setMap(map);
-			//markers.push(marker);
-			//alert(markers[0]);
         });
-      	
-        
+      	 
       }
-      
-  //     function setMapOnAll(map) {
-		//   for (var i = 0; i < markers.length; i++) {
-		//     markers[i].setMap(map);
-		//   }
-		// }
-		// function delMarkers(){
-		// 	setMapOnAll(null);
-  // 			markers = [];
-		// }
-
+  
     </script>
         <div id="map" style="width:800px;height:550px;"></div>
 	</div>
@@ -75,10 +55,10 @@
 						<input type="text" name="direccion" class="form-control" placeholder="Dirección"><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="telefono_prim" class="form-control" placeholder="Teléfono" required><br>
+						<input type="number" name="telefono_prim" class="form-control" placeholder="Teléfono" required><br>
 					</div>
 					<div class="form-group">
-						<input type="text" name="telefono_sec" class="form-control" placeholder="Teléfono secundario"><br>
+						<input type="number" name="telefono_sec" class="form-control" placeholder="Teléfono secundario"><br>
 					</div>
 					<div class="form-group">
 						<input type="text" name="ubicacion_prim_lat" class="form-control" placeholder="Latitud"><br>

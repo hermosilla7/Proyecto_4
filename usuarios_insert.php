@@ -1,9 +1,6 @@
 <?php
-	//iniciamos sesión - SIEMPRE TIENE QUE ESTAR EN LA PRIMERA LÍNEA
 	session_start();
-	// include 'conexion.proc.php';
-	// $consulta_usuarios = "SELECT * FROM usuario";
-	// $result_usuarios = mysqli_query($con, $consulta_usuarios);
+	error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>

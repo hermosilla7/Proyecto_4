@@ -1,5 +1,6 @@
 <?php
 	include_once 'conexion.proc.php';
+	error_reporting(0);
 ?>
 <html>
 	<head>
@@ -19,7 +20,6 @@
 			//
 			$sql = "INSERT INTO usuario (nombre, apellidos, correo, pass, img) VALUES ('$_REQUEST[nombre]', '$_REQUEST[apellidos]', '$_REQUEST[correo]', md5('$_REQUEST[pass]'), '$foto')";
 			$sql=utf8_decode($sql);
-			echo $sql;
 
 			//lanzamos la sentencia sql
 			mysqli_query($con, $sql);

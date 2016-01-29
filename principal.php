@@ -1,6 +1,6 @@
 <?php
-//iniciamos sesión - SIEMPRE TIENE QUE ESTAR EN LA PRIMERA LÍNEA
 session_start();
+error_reporting(0);
 $user_id = $_SESSION['id'];
 $foto = $_SESSION['img'];
 $nom_user=$_SESSION['nombre'];
@@ -48,8 +48,6 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 <input type="image" src="img/edit.png" onclick="window.location.href='usuarios_modificar.php'" style="float: right;"></br>
         <div class="contact-form">
 <?php
-//el include está comentado ya que en esta página no estamos accediendo a base de datos, de momento
-//include("conexion.proc.php");
 
 if (isset($_SESSION['mail'])) {
     ?>
@@ -59,15 +57,7 @@ if (isset($_SESSION['mail'])) {
         <input type="image" src="img/add.png" onclick="window.location.href='contactos_insert.php'" style="float: right;"></br></br>
     </div>
     <?php
-    /*if($_SESSION['nivel']==1){
-        echo "Eres administrador. A administrar!!";
-    } elseif ($_SESSION['nivel']==2){
-        echo "Eres editor. A editar!!";
-    } else {
-        echo "Eres usuario. A tomar café!!";
-    }*/
 } else {
-    //como han intentado acceder de manera incorrecta, redirigimos a la página index.php con un mensaje de error
     $_SESSION['error'] = "No te saltes pasos!";
     header("location: index.php");
 }
@@ -149,7 +139,7 @@ while ($contacto = mysqli_fetch_array($result_contactos)) {
                     var request = {
                         origin: position.coords.latitude + "," + position.coords.longitude,
                         destination: lat + "," + lng,
-                        travelMode: google.maps.TravelMode.WALKING,
+                        travelMode: google.maps.TravelMode.DRIVING,
                         provideRouteAlternatives: false
                     };
 
