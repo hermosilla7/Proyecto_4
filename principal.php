@@ -12,7 +12,7 @@ $result_contactos = mysqli_query($con, $consulta_contactos);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Página principal</title>
+    <title>Agenda</title>
     <link rel="icon" type="image/png" href="img/portada.png" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
     <script>
