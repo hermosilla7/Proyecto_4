@@ -1,4 +1,4 @@
-##PROYECTO 4: 
+﻿##PROYECTO 4: 
 Proyecto de Mateo Hermosilla y Jose Luis Maseda
 
 ##Reservas:
@@ -10,4 +10,4 @@ EXTRES:
 - Possibilitats de visualització de tots els contactes (o tots aquells que es desitgi) alhora en un sol mapa, indicant qui és cadascún.
 - Capturar la ubicació actual de l'usuari i mostrar la ruta fins al contacte mostrat."								
 
-Resolución adaptada a 1600 x 900
+Resolución adaptada a 1366x768

@@ -115,23 +115,35 @@ while ($contacto = mysqli_fetch_array($result_contactos)) {
 }
 
 ?>
+<a href="#" class="crunchify-top"><img src ="img/btt.png" style="float: right;" width="50px" height="50px"></a>
 </div>
+
 </div>
+
 <div id="contactMap">
+<div id="rutaOps">
+
 
 <!-- CREAR MAPA CON MARCADORES DE LA BD -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw3Cufv_vLKO64Dtg9nwU9QJBeDpAQwpw&callback=initialize"
         async defer></script>
 
+        <div id="rutaOps">
+            <select id="modo_viaje" class="opciones_ruta">
+                <option value="DRIVING">Coche</option>
+                <option value="BICYCLING" >Bicicleta</option>
+                <option value="WALKING">Caminando</option>
+            </select>
+        </div>
     <script>
-    
         var map;
         var directionsDisplay;
         var image = 'img/green.png'
 
         function crearRuta(lat, lng) {
             if (navigator.geolocation) {
+                var selectedMode = document.getElementById('modo_viaje').value;
                 navigator.geolocation.getCurrentPosition(function (position) {
                 document.getElementById("panel_ruta").style.display = "inline";
                     var directionsService = new google.maps.DirectionsService();
@@ -139,8 +151,8 @@ while ($contacto = mysqli_fetch_array($result_contactos)) {
                     var request = {
                         origin: position.coords.latitude + "," + position.coords.longitude,
                         destination: lat + "," + lng,
-                        travelMode: google.maps.TravelMode.DRIVING,
-                        provideRouteAlternatives: false
+                        travelMode: google.maps.TravelMode[selectedMode],
+                        provideRouteAlternatives: true
                     };
 
                     directionsService.route(request, function (response, status) {
@@ -168,7 +180,7 @@ while ($contacto = mysqli_fetch_array($result_contactos)) {
             });
             marker2.setMap(map);
         }
-
+        
         function initialize() {
             var myCenter = new google.maps.LatLng(41.384724, 2.172798);
             var positions = <?php
@@ -207,19 +219,9 @@ while ($contacto = mysqli_fetch_array($result_contactos)) {
             getLocation();
         }
 
-        //google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-<!-- <button onclick="getLocation()">Localizame</button> -->
-<!-- <table>
-    <tr><td> -->
 <div id="googleMap"></div>
-   <!--  </td><td> -->
 <div id="panel_ruta"></div>
-<!-- </tr></table> -->
-<!-- CREAR MAPA CON MARCADORES DE LA BD -->
-
-
-
 </div>
 </body>
 </html>

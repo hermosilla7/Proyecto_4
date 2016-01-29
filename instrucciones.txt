@@ -1,0 +1,25 @@
+Repositorio:
+https://github.com/hermosilla7/Proyecto_4.git
+
+
+User/pass accesos myContacts:
+
+david.marin@fje.edu
+12345
+-----
+ignasi.romero@fje.edu
+12345aA
+-----
+armand.gutierrez@fje.edu
+123456
+
+Hostinger:
+10000584.joan23@fje.edu
+GuGeBuSe
+
+BD Hostinger:
+user: u998312008_admin 
+pass: admin123
+
+bbdd nombre: u998312008_mc
+host mysql: mysql.hostinger.es
